@@ -14,6 +14,8 @@ var scores, roundScores, activePlayer, gamePlaying;
 init();
 
 document.querySelector('.btn-roll').addEventListener('click', rollDice);
+var winner = document.getElementById('isWinner');
+//winner.style.display = "none";
 
 function rollDice() {
 
@@ -53,7 +55,10 @@ function holdButton() {
                         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
                         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
                         gamePlaying = false;
+
+                        winner.style.display = "block";
                 } else {
+                        winner.style.display = "none";
                         //Next player
                         nextPlayer();
                 }
@@ -88,6 +93,7 @@ function init() {
         roundScores = 0;
         winningScore = 0;
         gamePlaying = true;
+        var winner = document.getElementById('isWinner');
         document.querySelector('.dice').style.display = 'none';
         document.getElementById('score-0').textContent = '0';
         document.getElementById('score-1').textContent = '0';
@@ -100,6 +106,8 @@ function init() {
         document.querySelector('.player-0-panel').classList.remove('active');
         document.querySelector('.player-1-panel').classList.remove('active');
         document.querySelector('.player-0-panel').classList.add('active');
+        winner.style.display = "none";
+
 
         if (winningScore == 0) {
                 var modal = document.getElementById('myModal');
@@ -127,7 +135,6 @@ function doneClick(){
         var modal = document.getElementById('myModal');
         winningScore = document.getElementById('winScore').value;
         if(winningScore != 0) {
-                console.log(winningScore);
                 modal.style.display = "none";
         }
         else{
