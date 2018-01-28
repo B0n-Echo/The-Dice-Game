@@ -15,3 +15,4 @@ certain more changes are on their way.
 New Changes as Follows:
 1. Modal Pop Up created for users to enter the Winning Score. Users can Define thier winning score before they start the game.
 2. Small CSS changes made.
+3. Added Winners CUP (Purely CSS, HTML).
