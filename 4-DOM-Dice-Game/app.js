@@ -47,7 +47,7 @@ function holdButton() {
 
                 document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-                if (scores[activePlayer] >= 50) {
+                if (scores[activePlayer] >= winningScore) {
                         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
                         document.querySelector('.dice').style.display = 'none';
                         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -109,7 +109,7 @@ function init() {
         
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function () {
-                        modal.style.display = "none";
+                        winningScore? modal.style.display = "none": alert("please enter a value");
                 }
         
                 // When the user clicks anywhere outside of the modal, close it
@@ -119,6 +119,18 @@ function init() {
                         }
                 }
         }
+}
 
+document.getElementById('addWinScore').addEventListener('click', doneClick);
 
+function doneClick(){
+        var modal = document.getElementById('myModal');
+        winningScore = document.getElementById('winScore').value;
+        if(winningScore != 0) {
+                console.log(winningScore);
+                modal.style.display = "none";
+        }
+        else{
+                alert("please enter a value");
+        }
 }

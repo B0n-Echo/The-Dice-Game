@@ -5,7 +5,6 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <title>Pig Game</title>
     </head>
@@ -47,18 +46,22 @@
         <h2>Lets Begin..</h2>
       </div>
       <div class="modal-body">
-          <label id = "info">Please enter a Winning score here</label>
+         <div>
+                <label id = "info">Please enter a Winning score here</label>
+         </div>
           <br>
           <br>
-        <label id = "winLabel"><b>Winning Score </b></label>
+
+        <label placeholder="enter your no here"><b>Winning Score</b></label>
         <input type="number" id = "winScore" >
+
+        <div style ="margin-top : 15px">
+            <button style ="color: green" id ="addWinScore">Done</button>
+        </div>
       </div>
     </div>
   
   </div>
-
-
-
 
         <script src="app.js"></script>
     </body>

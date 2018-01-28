@@ -47,9 +47,7 @@ body {
 
 
 
-/**********************************************
-*** PLAYERS
-**********************************************/
+/* PLAYERS*/
 
 .player-name {
     font-size: 40px;
@@ -176,7 +174,7 @@ i {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 60%;
+    width: 50%;
     height: 45%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
@@ -218,7 +216,7 @@ i {
 }
 
 .modal-body {
-    padding: 80px 50px;
+    padding: 30px 50px;
     font-size: 25px;
 }
 
