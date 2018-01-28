@@ -42,21 +42,21 @@ document.querySelector('.btn-hold').addEventListener('click', holdButton);
 
 function holdButton() {
 
-        if(gamePlaying){
+        if (gamePlaying) {
                 scores[activePlayer] += roundScores;
-                
-                        document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-                
-                        if (scores[activePlayer] >= 50) {
-                                document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
-                                document.querySelector('.dice').style.display = 'none';
-                                document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-                                document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-                                gamePlaying = false;
-                        } else {
-                                //Next player
-                                nextPlayer();
-                        }
+
+                document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+                if (scores[activePlayer] >= 50) {
+                        document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+                        document.querySelector('.dice').style.display = 'none';
+                        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+                        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+                        gamePlaying = false;
+                } else {
+                        //Next player
+                        nextPlayer();
+                }
 
         }
 
@@ -101,7 +101,24 @@ function init() {
         document.querySelector('.player-1-panel').classList.remove('active');
         document.querySelector('.player-0-panel').classList.add('active');
 
-if(winningScore == 0) {
-alert("please enter a winning value")
-}
+        if (winningScore == 0) {
+                var modal = document.getElementById('myModal');
+                var span = document.getElementsByClassName("close")[0];
+                
+                modal.style.display = "block";
+        
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                        modal.style.display = "none";
+                }
+        
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                        if (event.target == modal) {
+                                modal.style.display = "none";
+                        }
+                }
+        }
+
+
 }
